@@ -1,9 +1,12 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 import '../App.css';
 
 const Categories = () => (
   <>
-    <div><button>Check Status </button></div>
+    <div>
+      <button type="button">Check Status </button>
+    </div>
   </>
 );
 
