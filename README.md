@@ -4,7 +4,7 @@
   <img src="./logo.jpg" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Math Magicians</b></h3>
+  <h3><b>Book Store</b></h3>
 
 </div>
 
