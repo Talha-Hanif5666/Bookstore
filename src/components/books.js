@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import { v4 as uuidv4 } from 'uuid';
 import AddnewBook from './Form';
-import Book from './booklist';
+import Book from './list';
 
 const Books = () => {
   const book = [
