@@ -1,7 +1,7 @@
 const initialState = {
   categories: [],
-  status: 'Under construction',
 };
+const checkStatus = 'checkStatus';
 
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,4 +15,9 @@ const categoryReducer = (state = initialState, action) => {
   }
 };
 
+const checkStatusAction = () => ({
+  type: checkStatus,
+});
+
+export { checkStatusAction };
 export default categoryReducer;
