@@ -4,7 +4,7 @@
   <img src="./logo.jpg" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Math Magicians</b></h3>
+  <h3><b>Book Store</b></h3>
 
 </div>
 
@@ -108,7 +108,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Talha-Hanif5666/Maths-Magician.git
+  git clone https://github.com/Talha-Hanif5666/Bookstore.git
 ```
 
 ### Install
