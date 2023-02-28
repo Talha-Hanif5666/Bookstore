@@ -11,13 +11,11 @@ const Book = (props) => {
       {book.map((item) => (
         <div key={item.id}>
           <h3>{item.title}</h3>
-          <p>{item.author}</p>
+          <h4>{item.author}</h4>
+          <p>{item.category}</p>
           <span>
             <button type="button">Comments</button>
-            <button
-              type="button"
-              onClick={() => dispatch(removeBook(item))}
-            >
+            <button type="button" onClick={() => dispatch(removeBook(item.id))}>
               Remove
             </button>
             <button type="button">Edit</button>

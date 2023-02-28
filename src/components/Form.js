@@ -17,44 +17,26 @@ const AddnewBook = () => {
     setAuthor(e.target.value);
   };
 
-  const submitBookToStore = (title, author) => {
+  const submitBookToStore = (e) => {
+    e.preventDefault();
     if (!title || !author) return;
-    const Newbook = {
+    const newBook = {
       id: uuidv4(),
       title,
       author,
     };
-    dispatch(addBook(Newbook));
+    dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
   };
+
   return (
     <div className="add-new-book">
       <h1>Add New Book</h1>
-      <form>
-        <input
-          type="text"
-          name="title"
-          placeholder="Book Title"
-          onChange={handleTitle}
-          value={title}
-          required
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Book Author"
-          onChange={handleAuthor}
-          value={author}
-          required
-        />
-        <button
-          type="submit"
-          onClick={() => submitBookToStore(title, author)}
-        >
-          Add Book
-
-        </button>
+      <form onSubmit={submitBookToStore}>
+        <input type="text" placeholder="Title" onChange={handleTitle} value={title} required />
+        <input type="text" placeholder="Author" onChange={handleAuthor} value={author} required />
+        <button type="submit">Add</button>
       </form>
     </div>
   );
