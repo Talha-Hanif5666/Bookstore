@@ -8,7 +8,7 @@ const categoryReducer = (state = initialState, action) => {
     case 'SET_STATUS':
       return {
         ...state,
-        status: 'Under construction',
+        status: 'Under construction!',
       };
     default:
       return state;
