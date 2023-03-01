@@ -6,6 +6,7 @@ import { addBook } from '../redux/books/bookSlice';
 const AddnewBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setcategory] = useState('');
 
   const dispatch = useDispatch();
 
@@ -17,6 +18,10 @@ const AddnewBook = () => {
     setAuthor(e.target.value);
   };
 
+  const handlecategory = (e) => {
+    setcategory(e.target.value);
+  };
+
   const submitBookToStore = (e) => {
     e.preventDefault();
     if (!title || !author) return;
@@ -24,10 +29,12 @@ const AddnewBook = () => {
       id: uuidv4(),
       title,
       author,
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
+    setcategory('');
   };
 
   return (
@@ -36,6 +43,7 @@ const AddnewBook = () => {
       <form onSubmit={submitBookToStore}>
         <input type="text" placeholder="Title" onChange={handleTitle} value={title} required />
         <input type="text" placeholder="Author" onChange={handleAuthor} value={author} required />
+        <input type="text" placeholder="category" onChange={handlecategory} value={category} required />
         <button type="submit">Add</button>
       </form>
     </div>
