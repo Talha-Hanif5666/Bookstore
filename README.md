@@ -75,7 +75,7 @@
 
 > Add a link to your deployed project.
 
-- [Comming soon]()
+- [Live Demo link](https://talhahanif-bookstore.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
