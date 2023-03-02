@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Montserrat:300,400,500,700|Open+Sans:300,400,600,700&display=swap');
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -108,7 +106,6 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
- 
   padding: 20px;
   background-color: #fff;
   border: 1px solid #e8e8e8;
@@ -154,7 +151,7 @@ body {
   width: 6.688rem;
   height: 1.188rem;
   margin: 0.25rem 0 0;
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -176,7 +173,7 @@ body {
   width: 3.375rem;
   height: 1.188rem;
   margin: 0.188rem 0.938rem 0.125rem 0;
-  font-family: RobotoSlab;
+  font-family: RobotoSlab, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
