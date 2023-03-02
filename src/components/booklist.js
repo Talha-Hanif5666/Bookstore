@@ -19,6 +19,7 @@ const Book = (props) => {
             </div>
             <span className="btn-status">
               <button type="button">Comments</button>
+              <span className="vertical-line" />
               <button
                 className="remove-btn"
                 type="button"
@@ -26,6 +27,7 @@ const Book = (props) => {
               >
                 Remove
               </button>
+              <span className="vertical-line" />
               <button type="button">Edit</button>
             </span>
           </div>
@@ -40,6 +42,7 @@ const Book = (props) => {
               </p>
               <span>Completed</span>
             </div>
+            <span className="vertical-line2" />
             <div className="progress-status">
               <p>Current Chapter</p>
               <span>

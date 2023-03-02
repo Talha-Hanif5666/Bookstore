@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
-import { FaRegUser } from 'react-icons/fa';
+import { GoPerson } from 'react-icons/go';
 import '../index.css';
 
 const Navbar = () => (
@@ -17,7 +17,7 @@ const Navbar = () => (
         </Link>
       </div>
       <button type="button" className="user">
-        <FaRegUser color="blue" fontSize="30px" />
+        <GoPerson />
       </button>
     </nav>
     <Outlet />
