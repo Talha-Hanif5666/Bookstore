@@ -1,9 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-  <img src="./logo.jpg" alt="logo" width="140"  height="auto" />
-  <br/>
-
   <h3><b>Book Store</b></h3>
 
 </div>
@@ -163,6 +159,7 @@ Example:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
+## 🔮 FUTURE FEATURES 
 
 - [ ] **[Add Book reading proress bar]**
 - [ ] **[FUll website development]**

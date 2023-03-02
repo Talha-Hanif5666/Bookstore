@@ -1,55 +1,54 @@
-import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const initialState = [
-  {
-    id: uuidv4(),
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Nonfiction',
-  },
-];
+const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/d6Bp2N91qglaGzR3wQff/books';
 
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const getBooks = createAsyncThunk('books/fetch', async () => {
+  const response = await axios.get(api);
+  const books = Object.values(response.data);
+  const keys = Object.keys(response.data);
+  return books.map((book, index) => ({
+    id: keys[index],
+    title: book[0].title,
+    author: book[0].author,
+    category: book[0].category,
+  }));
+});
 
-const bookReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.payload];
-    case REMOVE_BOOK:
-      return [...state.filter((book) => book.id !== action.payload.id)];
-    default:
-      return state;
-  }
-};
+const addBook = createAsyncThunk('books/add', async (book, { dispatch }) => {
+  const bookData = {
+    item_id: `${book.id}`,
+    title: `${book.title}`,
+    author: `${book.author}`,
+    category: `${book.category}`,
+  };
+  await axios.post(api, bookData);
+  dispatch(getBooks()); // Fetch the updated list of books from the API
+  return bookData;
+});
 
-const addBook = (book) => ({
-  type: ADD_BOOK,
-  payload: {
-    id: uuidv4(),
-    title: book.title,
-    author: book.author,
+const removeBook = createAsyncThunk('books/remove', async (id, { dispatch }) => {
+  await axios.delete(`${api}/${id}`);
+  dispatch(getBooks()); // Fetch the updated list of books from the API
+  return id;
+});
+
+const bookReducer = createSlice({
+  name: 'books',
+  initialState: [],
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBooks.fulfilled, (state, action) => action.payload)
+      .addCase(addBook.fulfilled, (state, action) => {
+        state.push(action.payload);
+      })
+      .addCase(removeBook.fulfilled, (state, action) => {
+        const bookIdToRemove = action.payload;
+        return state.filter((book) => book.id !== bookIdToRemove);
+      });
   },
 });
 
-const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  payload: {
-    id,
-  },
-});
-
-export { addBook, removeBook };
-export default bookReducer;
+export { addBook, removeBook, getBooks };
+export default bookReducer.reducer;
