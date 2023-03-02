@@ -82,9 +82,9 @@ body {
 .user {
   border: 1px solid #e8e8e8;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
+  width: 50px;
+  height: 50px;
+  
   color: #0290ff;
   transition: all 0.3s ease;
   outline: none;
@@ -451,4 +451,9 @@ hr {
 .add-new-book {
   width: 72rem;
   margin-left: 6rem;
+}
+
+.user svg {
+  width: 30px;
+  height: 30px;
 }
