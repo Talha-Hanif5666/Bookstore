@@ -55,7 +55,6 @@ body {
 }
 
 .nav-link {
-  font-size: 16px;
   color: #121212;
   opacity: 0.5;
   text-transform: uppercase;
@@ -66,7 +65,6 @@ body {
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 1.9px;
 }
 
 .nav-link:hover {
@@ -84,7 +82,6 @@ body {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  
   color: #0290ff;
   transition: all 0.3s ease;
   outline: none;
@@ -145,14 +142,13 @@ body {
   width: auto;
   height: 1.125rem;
   margin: 0 2.438rem 0 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  
 }
 
 .book-detail h3 {
@@ -271,7 +267,7 @@ hr {
   color: #fff;
   width: 11.5rem;
   height: 2.8rem;
-  padding: 0.4 1.1 0.5 1.3rem;
+  padding: 0.4rem 1.1rem 0.5rem 1.3rem;
   border: 1px solid #e8e8e8;
   font-family: RobotoSlab, sans-serif;
   border-radius: 5px;
@@ -279,11 +275,9 @@ hr {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  
 }
 
 .add-new-book form button {
- 
   background: #0290ff;
   color: #fff;
   text-transform: uppercase;
@@ -295,7 +289,6 @@ hr {
   transition: all 0.3s ease;
   width: 11.5rem;
   height: 2.813rem;
-  border-radius: 3px;
   background-color: #0290ff;
 }
 
@@ -376,7 +369,7 @@ hr {
   width: 5rem;
   height: 1.125rem;
   margin-top: -10px;
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 0.875rem;
   font-weight: normal;
   font-stretch: normal;
@@ -445,7 +438,6 @@ hr {
   border-left: 1px solid #e8e8e8;
   width: 0.125rem;
   height: 4.375rem;
- 
 }
 
 .add-new-book {
