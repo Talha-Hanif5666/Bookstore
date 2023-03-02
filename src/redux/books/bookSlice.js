@@ -12,6 +12,8 @@ const getBooks = createAsyncThunk('books/fetch', async () => {
     title: book[0].title,
     author: book[0].author,
     category: book[0].category,
+    complete: Math.floor(Math.random() * 100),
+    chapter: Math.floor(Math.random() * 10),
   }));
 });
 

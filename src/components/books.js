@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import AddnewBook from './Form';
 import Book from './booklist';
 import { getBooks } from '../redux/books/bookSlice';
+import '../index.css';
 
 const Books = () => {
   const book = useSelector((state) => state.books);
